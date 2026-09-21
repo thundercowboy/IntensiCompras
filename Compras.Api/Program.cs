@@ -22,7 +22,8 @@ builder.Services.AddDbContext<AppDbContext>(x =>
 builder
     .Services
     .AddTransient<IMaterialHandler, MaterialHandler>()
-    .AddTransient<ICategoriaItemHandler, CategoriaItemHandler>();
+    .AddTransient<ICategoriaItemHandler, CategoriaItemHandler>()
+    .AddTransient<IItemHandler, ItemHandler>();
 
 var app = builder.Build();
 

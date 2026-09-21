@@ -1,26 +1,27 @@
 ﻿using Compras.Api.Common.Api;
 using Compras.Core.Handlers;
-using Compras.Core.Requests.CategoriasItem;
+using Compras.Core.Models;
+using Compras.Core.Requests.Itens;
 using Compras.Core.Responses;
 
-namespace Compras.Api.Endpoints.CategoriasItem;
+namespace Compras.Api.Endpoints.Itens;
 
-public class GetCategoriaItemByIdEndpoint : IEndpoint
+public class GetItemByIdEndpoint : IEndpoint
 {
     public static void Map(IEndpointRouteBuilder app)
         => app.MapGet("/{id}", HandleAsync) 
-            .WithName("Categorias: Recuperar")
-            .WithSummary("Recupera uma categoria")
-            .WithDescription("Recupera uma categoria pelo ID")
+            .WithName("Itens: Recuperar")
+            .WithSummary("Recupera um item")
+            .WithDescription("Recupera um item pelo ID")
             .WithOrder(4)
-            .Produces<Response<Core.Models.CategoriaItem?>>();
+            .Produces<Response<Item?>>();
 
     public static async Task<IResult> HandleAsync(
-        ICategoriaItemHandler handler,
+        IItemHandler handler,
         int id)
     {
 
-        var request = new GetCategoriaItemByIdRequest()
+        var request = new GetItemByIdRequest()
         {
             Id = id,
         };

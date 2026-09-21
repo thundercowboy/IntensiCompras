@@ -1,5 +1,6 @@
 ﻿using Compras.Api.Common.Api;
 using Compras.Api.Endpoints.CategoriasItem;
+using Compras.Api.Endpoints.Itens;
 using Compras.Api.Endpoints.Materiais;
 
 namespace Compras.Api.Endpoints;
@@ -28,6 +29,15 @@ public static class Endpoint
             .MapEndpoint<DeleteCategoriaItemEndpoint>()
             .MapEndpoint<GetCategoriaItemByIdEndpoint>()
             .MapEndpoint<GetAllCategoriasItemEndpoint>();
+        
+        endpoints.MapGroup("v1/itens")
+            .WithTags("itens")
+            .RequireAuthorization()
+            .MapEndpoint<CreateItemEndpoint>()
+            .MapEndpoint<UpdateItemEndpoint>()
+            .MapEndpoint<DeleteItemEndpoint>()
+            .MapEndpoint<GetItemByIdEndpoint>()
+            .MapEndpoint<GetAllItensEndpoint>();
     }
 
     private static IEndpointRouteBuilder MapEndpoint<TEndpoint>(this IEndpointRouteBuilder app)

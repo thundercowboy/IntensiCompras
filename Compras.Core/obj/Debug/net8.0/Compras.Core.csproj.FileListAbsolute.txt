@@ -5,6 +5,7 @@ C:\dev\IntensiCompras\Compras.Core\obj\Debug\net8.0\Compras.Core.GeneratedMSBuil
 C:\dev\IntensiCompras\Compras.Core\obj\Debug\net8.0\Compras.Core.AssemblyInfoInputs.cache
 C:\dev\IntensiCompras\Compras.Core\obj\Debug\net8.0\Compras.Core.AssemblyInfo.cs
 C:\dev\IntensiCompras\Compras.Core\obj\Debug\net8.0\Compras.Core.csproj.CoreCompileInputs.cache
+C:\dev\IntensiCompras\Compras.Core\obj\Debug\net8.0\Compras.Core.sourcelink.json
 C:\dev\IntensiCompras\Compras.Core\obj\Debug\net8.0\Compras.Core.dll
 C:\dev\IntensiCompras\Compras.Core\obj\Debug\net8.0\refint\Compras.Core.dll
 C:\dev\IntensiCompras\Compras.Core\obj\Debug\net8.0\Compras.Core.pdb

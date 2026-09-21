@@ -2,5 +2,5 @@
 
 public class DeleteItemRequest : Request
 {
-    public long Id { get; set; }
+    public int Id { get; set; }
 }

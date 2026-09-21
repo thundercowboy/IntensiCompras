@@ -129,6 +129,7 @@ C:\dev\IntensiCompras\Compras.Api\obj\Debug\net8.0\Compras.Api.AssemblyInfo.cs
 C:\dev\IntensiCompras\Compras.Api\obj\Debug\net8.0\Compras.Api.csproj.CoreCompileInputs.cache
 C:\dev\IntensiCompras\Compras.Api\obj\Debug\net8.0\Compras.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\dev\IntensiCompras\Compras.Api\obj\Debug\net8.0\Compras.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\dev\IntensiCompras\Compras.Api\obj\Debug\net8.0\Compras.Api.sourcelink.json
 C:\dev\IntensiCompras\Compras.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\dev\IntensiCompras\Compras.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\dev\IntensiCompras\Compras.Api\obj\Debug\net8.0\staticwebassets\msbuild.Compras.Api.Microsoft.AspNetCore.StaticWebAssets.props

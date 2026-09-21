@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Compras.Api.Handlers;
 
-public class ItemHandler(AppDbContext context) : IItensHandler
+public class ItemHandler(AppDbContext context) : IItemHandler
 {
     public async Task<Response<Item?>> CreateAsync(CreateItemRequest request)
     {
@@ -106,7 +106,31 @@ public class ItemHandler(AppDbContext context) : IItensHandler
     {
         try
         {
+            try
+            {
+                var query = context
+                    .Itens
+                    .AsNoTracking()
+                    .Where(x => x.UserId == request.UserId)
+                    .OrderBy(x => x.Material);
+
+                var itens = await query
+                    .Skip((request.PageNumber - 1) * request.PageSize)
+                    .Take(request.PageSize)
+                    .ToListAsync();
             
+                var count = await query.CountAsync();
+            
+                return new PagedResponse<List<Item>>(
+                    itens,
+                    count, 
+                    request.PageNumber,
+                    request.PageSize);
+            }
+            catch
+            {
+                return new PagedResponse<List<Item>>(null, 500, "Não foi possivel consultar os materiais");
+            }
 
         }
         catch
