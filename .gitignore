@@ -1,0 +1,26 @@
+# JetBrains Rider / IntelliJ
+.idea/
+
+# .NET build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build configurations
+[Dd]ebug/
+[Rr]elease/
+
+# Architecture-specific
+x64/
+x86/
+
+# Logs
+*.log
