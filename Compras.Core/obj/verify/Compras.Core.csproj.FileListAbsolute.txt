@@ -1,0 +1,11 @@
+C:\dev\IntensiCompras\Compras.Core\bin\verify\Compras.Core.deps.json
+C:\dev\IntensiCompras\Compras.Core\bin\verify\Compras.Core.dll
+C:\dev\IntensiCompras\Compras.Core\bin\verify\Compras.Core.pdb
+C:\dev\IntensiCompras\Compras.Core\obj\verify\Compras.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\IntensiCompras\Compras.Core\obj\verify\Compras.Core.AssemblyInfoInputs.cache
+C:\dev\IntensiCompras\Compras.Core\obj\verify\Compras.Core.AssemblyInfo.cs
+C:\dev\IntensiCompras\Compras.Core\obj\verify\Compras.Core.csproj.CoreCompileInputs.cache
+C:\dev\IntensiCompras\Compras.Core\obj\verify\Compras.Core.dll
+C:\dev\IntensiCompras\Compras.Core\obj\verify\refint\Compras.Core.dll
+C:\dev\IntensiCompras\Compras.Core\obj\verify\Compras.Core.pdb
+C:\dev\IntensiCompras\Compras.Core\obj\verify\ref\Compras.Core.dll
