@@ -15,6 +15,7 @@ public class ItemHandler(AppDbContext context) : IItemHandler
         {
             var item = new Item()
             {
+                UserId = request.UserId,
                 IdMaterial = request.IdMaterial,
                 Quantidade = request.Quantidade,
                 IdUnidade = request.IdUnidade,
@@ -112,7 +113,8 @@ public class ItemHandler(AppDbContext context) : IItemHandler
                     .Itens
                     .AsNoTracking()
                     .Where(x => x.UserId == request.UserId)
-                    .OrderBy(x => x.Material);
+                    .OrderBy(x => x.Material.Nome)
+                    .ThenBy(x => x.Id);
 
                 var itens = await query
                     .Skip((request.PageNumber - 1) * request.PageSize)

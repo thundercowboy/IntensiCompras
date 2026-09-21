@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Compras.Core.Responses;
 
@@ -10,7 +10,7 @@ public class Response<TData>
     public Response() => 
         _code = Configuration.DefaultStatusCode;
     
-    public Response(TData data, int code = Configuration.DefaultStatusCode, string? message = null)
+    public Response(TData? data, int code = Configuration.DefaultStatusCode, string? message = null)
     {
         Data = data;
         Message = message;

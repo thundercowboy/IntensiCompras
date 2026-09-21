@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Compras.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0bb1004c98cba3bb5d66250802230f345441ea2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7949cca0a714e4b236aff85be9dadbe9d522bcde")]
 [assembly: System.Reflection.AssemblyProductAttribute("Compras.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Compras.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

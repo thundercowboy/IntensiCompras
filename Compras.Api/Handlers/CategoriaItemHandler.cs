@@ -41,8 +41,7 @@ public class CategoriaItemHandler(AppDbContext context) : ICategoriaItemHandler
                 return new Response<CategoriaItem?>(null, 404, "Categoria não encontrada");
             
             categoria.Nome = request.Nome;
-            
-            await context.CategoriasItem.AddAsync(categoria);
+
             await context.SaveChangesAsync();
             
             return new Response<CategoriaItem?>(categoria, message: "Categoria atualizada com sucesso.");

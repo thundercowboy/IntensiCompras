@@ -9,7 +9,6 @@
       "Compras.Api/1.0.0": {
         "dependencies": {
           "Compras.Core": "1.0.0",
-          "Microsoft.AspNetCore.OpenApi": "11.0.0-rc.1.26425.128",
           "Microsoft.EntityFrameworkCore.Design": "8.0.31",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.31",
           "Swashbuckle.AspNetCore": "10.2.3"
@@ -61,7 +60,6 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/11.0.0-rc.1.26425.128": {},
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -974,13 +972,6 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.OpenApi/11.0.0-rc.1.26425.128": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Gy2njnO4YX6Vdd8ca5q86MNYQSyMdvWKkLiQrT4cvCgIyTg+pNIwh5Sq+LJf+gzIXmeBnolE+RWDYOkbnndDZA==",
-      "path": "microsoft.aspnetcore.openapi/11.0.0-rc.1.26425.128",
-      "hashPath": "microsoft.aspnetcore.openapi.11.0.0-rc.1.26425.128.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "type": "package",

@@ -43,8 +43,7 @@ public class MaterialHandler(AppDbContext context) : IMaterialHandler
             
             material.CodigoMaterial = request.CodigoMaterial;
             material.Nome = request.Nome;
-            
-            await context.Materiais.AddAsync(material);
+
             await context.SaveChangesAsync();
             
             return new Response<Material?>(material, message: "Material atualizado com sucesso.");

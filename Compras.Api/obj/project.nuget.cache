@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NoWSEEd2SjY=",
+  "dgSpecHash": "zqBdsrEaw2I=",
   "success": true,
   "projectFilePath": "C:\\dev\\IntensiCompras\\Compras.Api\\Compras.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\azure.core\\1.41.0\\azure.core.1.41.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\azure.identity\\1.12.1\\azure.identity.1.12.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.openapi\\11.0.0-rc.1.26425.128\\microsoft.aspnetcore.openapi.11.0.0-rc.1.26425.128.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

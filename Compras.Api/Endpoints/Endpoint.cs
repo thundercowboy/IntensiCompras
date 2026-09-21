@@ -1,5 +1,6 @@
 ﻿using Compras.Api.Common.Api;
 using Compras.Api.Endpoints.CategoriasItem;
+using Compras.Api.Endpoints.Fornecedores;
 using Compras.Api.Endpoints.Itens;
 using Compras.Api.Endpoints.Materiais;
 
@@ -38,6 +39,15 @@ public static class Endpoint
             .MapEndpoint<DeleteItemEndpoint>()
             .MapEndpoint<GetItemByIdEndpoint>()
             .MapEndpoint<GetAllItensEndpoint>();
+
+        endpoints.MapGroup("v1/fornecedores")
+            .WithTags("fornecedores")
+            .RequireAuthorization()
+            .MapEndpoint<CreateFornecedorEndpoint>()
+            .MapEndpoint<UpdateFornecedorEndpoint>()
+            .MapEndpoint<DeleteFornecedorEndpoint>()
+            .MapEndpoint<GetFornecedorByIdEndpoint>()
+            .MapEndpoint<GetAllFornecedoresEndpoint>();
     }
 
     private static IEndpointRouteBuilder MapEndpoint<TEndpoint>(this IEndpointRouteBuilder app)
