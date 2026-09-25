@@ -24,7 +24,8 @@ builder
     .AddTransient<IMaterialHandler, MaterialHandler>()
     .AddTransient<ICategoriaItemHandler, CategoriaItemHandler>()
     .AddTransient<IItemHandler, ItemHandler>()
-    .AddTransient<IFornecedorHandler, FornecedorHandler>();
+    .AddTransient<IFornecedorHandler, FornecedorHandler>()
+    .AddTransient<IAprovacaoHandler, AprovacaoHandler>();
 
 var app = builder.Build();
 

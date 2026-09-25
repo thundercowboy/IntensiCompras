@@ -1,4 +1,5 @@
 ﻿using Compras.Api.Common.Api;
+using Compras.Api.Endpoints.Aprovacoes;
 using Compras.Api.Endpoints.CategoriasItem;
 using Compras.Api.Endpoints.Fornecedores;
 using Compras.Api.Endpoints.Itens;
@@ -48,6 +49,15 @@ public static class Endpoint
             .MapEndpoint<DeleteFornecedorEndpoint>()
             .MapEndpoint<GetFornecedorByIdEndpoint>()
             .MapEndpoint<GetAllFornecedoresEndpoint>();
+        
+        endpoints.MapGroup("v1/aprovacoes")
+            .WithTags("aprovacoes")
+            .RequireAuthorization()
+            .MapEndpoint<CreateAprovacaoEndpoint>()
+            .MapEndpoint<UpdateAprovacaoEndpoint>()
+            .MapEndpoint<DeleteAprovacaoEndpoint>()
+            .MapEndpoint<GetAprovacaoByIdEndpoint>()
+            .MapEndpoint<GetAllAprovacoesEndpoint>();
     }
 
     private static IEndpointRouteBuilder MapEndpoint<TEndpoint>(this IEndpointRouteBuilder app)
