@@ -36,7 +36,7 @@ public class SolicitacaoMapping : IEntityTypeConfiguration<Solicitacao>
         builder.HasOne(x => x.Aprovacao)
             .WithMany()
             .HasForeignKey(x => x.IdAprovacao)
-            .IsRequired()
+            .IsRequired(false)
             .OnDelete(DeleteBehavior.Restrict);
         
         builder.Property(x => x.Setor)

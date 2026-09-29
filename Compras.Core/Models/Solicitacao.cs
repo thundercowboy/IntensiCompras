@@ -1,4 +1,4 @@
-﻿namespace Compras.Core.Models;
+namespace Compras.Core.Models;
 
 public class Solicitacao
 {
@@ -11,12 +11,12 @@ public class Solicitacao
     public string Descricao  { get; set; } = string.Empty;
     
     public ICollection<Item> Itens { get; set; } = new List<Item>();
-    
-    public ESetor Setor { get; set; }
+
+    public ESetor Setor { get; set; } = ESetor.Compras;
 
     public EStatusSolicitacao StatusSolicitacao { get; set; } = EStatusSolicitacao.Pendente;
     
-    public int IdAprovacao { get; set; }
-    public Aprovacao Aprovacao { get; set; } = null!;
+    public int? IdAprovacao { get; set; }
+    public Aprovacao? Aprovacao { get; set; }
     public string UserId { get; set; } = string.Empty;
 }

@@ -4,6 +4,7 @@ using Compras.Api.Endpoints.CategoriasItem;
 using Compras.Api.Endpoints.Fornecedores;
 using Compras.Api.Endpoints.Itens;
 using Compras.Api.Endpoints.Materiais;
+using Compras.Api.Endpoints.Solicitacoes;
 using Compras.Api.Endpoints.UnidadesMedida;
 
 namespace Compras.Api.Endpoints;
@@ -68,6 +69,15 @@ public static class Endpoint
             .MapEndpoint<DeleteUnidadeMedidaEndpoint>()
             .MapEndpoint<GetUnidadeMedidaByIdEndpoint>()
             .MapEndpoint<GetAllUnidadesMedidaEndpoint>();
+        
+        endpoints.MapGroup("v1/solicitacoes")
+            .WithTags("solicitacoes")
+            .RequireAuthorization()
+            .MapEndpoint<CreateSolicitacaoEndpoint>()
+            .MapEndpoint<UpdateSolicitacaoEndpoint>()
+            .MapEndpoint<DeleteSolicitacaoEndpoint>()
+            .MapEndpoint<GetSolicitacaoByIdEndpoint>()
+            .MapEndpoint<GetAllSolicitacoesEndpoint>();
     }
 
     private static IEndpointRouteBuilder MapEndpoint<TEndpoint>(this IEndpointRouteBuilder app)
