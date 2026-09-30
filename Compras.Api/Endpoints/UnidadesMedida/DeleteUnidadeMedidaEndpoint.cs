@@ -1,4 +1,5 @@
-﻿using Compras.Api.Common.Api;
+﻿using System.Security.Claims;
+using Compras.Api.Common.Api;
 using Compras.Core.Handlers;
 using Compras.Core.Models;
 using Compras.Core.Requests.UnidadesMedida;
@@ -17,12 +18,14 @@ public class DeleteUnidadeMedidaEndpoint : IEndpoint
             .Produces<Response<UnidadeMedida?>>();
 
     public static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         IUnidadeMedidaHandler handler,
         int id)
     {
 
         var request = new DeleteUnidadeMedidaRequest()
         {
+            UserId = user.Identity?.Name ?? string.Empty,
             Id = id
         };
 

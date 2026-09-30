@@ -1,4 +1,5 @@
-﻿using Compras.Api.Common.Api;
+﻿using System.Security.Claims;
+using Compras.Api.Common.Api;
 using Compras.Core.Handlers;
 using Compras.Core.Requests.CategoriasItem;
 using Compras.Core.Responses;
@@ -16,12 +17,14 @@ public class DeleteCategoriaItemEndpoint : IEndpoint
             .Produces<Response<Core.Models.CategoriaItem?>>();
 
     public static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ICategoriaItemHandler handler,
         int id)
     {
 
         var request = new DeleteCategoriaItemRequest()
         {
+            UserId = user.Identity?.Name ?? string.Empty,
             Id = id
         };
 

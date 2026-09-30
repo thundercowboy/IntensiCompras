@@ -1,4 +1,5 @@
-﻿using Compras.Api.Common.Api;
+﻿using System.Security.Claims;
+using Compras.Api.Common.Api;
 using Compras.Core;
 using Compras.Core.Handlers;
 using Compras.Core.Models;
@@ -19,6 +20,7 @@ public class GetAllFornecedoresEndpoint  : IEndpoint
             .Produces<PagedResponse<List<Fornecedor>?>>();
 
     public static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         IFornecedorHandler handler,
         [FromQuery] int pageNumber = Configuration.DefaultPageNumber,
         [FromQuery] int pageSize = Configuration.DefaultPageSize
@@ -26,6 +28,7 @@ public class GetAllFornecedoresEndpoint  : IEndpoint
     {
         var request = new GetAllFornecedoresRequest()
         {
+            UserId = user.Identity?.Name ?? string.Empty,
             PageNumber = pageNumber,
             PageSize = pageSize
         };

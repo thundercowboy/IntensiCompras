@@ -1,4 +1,5 @@
-﻿using Compras.Api.Common.Api;
+﻿using System.Security.Claims;
+using Compras.Api.Common.Api;
 using Compras.Core.Handlers;
 using Compras.Core.Models;
 using Compras.Core.Requests.Aprovacoes;
@@ -17,12 +18,14 @@ public class GetAprovacaoByIdEndpoint : IEndpoint
             .Produces<Response<Aprovacao?>>();
 
     public static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         IAprovacaoHandler handler,
         int id)
     {
 
         var request = new GetAprovacaoByIdRequest()
         {
+            UserId = user.Identity?.Name ?? string.Empty,
             Id = id,
         };
         

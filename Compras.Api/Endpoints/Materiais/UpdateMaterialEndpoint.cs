@@ -1,4 +1,5 @@
-﻿using Compras.Api.Common.Api;
+﻿using System.Security.Claims;
+using Compras.Api.Common.Api;
 using Compras.Core.Handlers;
 using Compras.Core.Models;
 using Compras.Core.Requests.Materiais;
@@ -17,10 +18,12 @@ public class UpdateMaterialEndpoint : IEndpoint
                 .Produces<Response<Material?>>();
 
         public static async Task<IResult> HandleAsync(
+            ClaimsPrincipal user,
             IMaterialHandler handler,
             UpdateMaterialRequest request,
             int id)
         {
+            request.UserId = user.Identity?.Name ?? string.Empty;
             request.Id = id;
             
             var result = await handler.UpdateAsync(request);

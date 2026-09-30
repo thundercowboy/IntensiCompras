@@ -1,4 +1,5 @@
-﻿using Compras.Api.Common.Api;
+﻿using System.Security.Claims;
+using Compras.Api.Common.Api;
 using Compras.Core.Handlers;
 using Compras.Core.Models;
 using Compras.Core.Requests.Itens;
@@ -17,10 +18,12 @@ public class UpdateItemEndpoint : IEndpoint
             .Produces<Response<Item?>>();
 
     public static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         IItemHandler handler,
         UpdateItemRequest request,
         int id)
     {
+        request.UserId = user.Identity?.Name ?? string.Empty;
         request.Id = id;
             
         var result = await handler.UpdateAsync(request);

@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Compras.Api.Common.Api;
 using Compras.Core;
 using Compras.Core.Handlers;
@@ -18,6 +19,7 @@ public class GetAllCategoriasItemEndpoint : IEndpoint
             .Produces<PagedResponse<List<Core.Models.CategoriaItem>?>>();
 
     public static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ICategoriaItemHandler handler,
         [FromQuery] int pageNumber = Configuration.DefaultPageNumber,
         [FromQuery] int pageSize = Configuration.DefaultPageSize
@@ -25,6 +27,7 @@ public class GetAllCategoriasItemEndpoint : IEndpoint
     {
         var request = new GetAllCategoriasItemRequest()
         {
+            UserId = user.Identity?.Name ?? string.Empty,
             PageNumber = pageNumber,
             PageSize = pageSize
         };
