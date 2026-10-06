@@ -2,10 +2,12 @@
 using Compras.Api.Endpoints.Aprovacoes;
 using Compras.Api.Endpoints.CategoriasItem;
 using Compras.Api.Endpoints.Fornecedores;
+using Compras.Api.Endpoints.Identity;
 using Compras.Api.Endpoints.Itens;
 using Compras.Api.Endpoints.Materiais;
 using Compras.Api.Endpoints.Solicitacoes;
 using Compras.Api.Endpoints.UnidadesMedida;
+using Compras.Api.Models;
 
 namespace Compras.Api.Endpoints;
 
@@ -15,6 +17,10 @@ public static class Endpoint
     {
         var endpoints = app
             .MapGroup("");
+        
+        endpoints.MapGroup("")
+            .WithTags("health check")
+            .MapGet("/", () => new { message = "ok" });
         
         endpoints.MapGroup("v1/materiais")
             .WithTags("materiais")
@@ -78,6 +84,15 @@ public static class Endpoint
             .MapEndpoint<DeleteSolicitacaoEndpoint>()
             .MapEndpoint<GetSolicitacaoByIdEndpoint>()
             .MapEndpoint<GetAllSolicitacoesEndpoint>();
+
+        endpoints.MapGroup("v1/identity")
+            .WithTags("Identity")
+            .MapIdentityApi<User>();
+        
+        endpoints.MapGroup("v1/identity")
+            .WithTags("Identity")
+            .MapEndpoint<LogoutEndpoint>()
+            .MapEndpoint<GetRolesEndpoint>();
     }
 
     private static IEndpointRouteBuilder MapEndpoint<TEndpoint>(this IEndpointRouteBuilder app)
