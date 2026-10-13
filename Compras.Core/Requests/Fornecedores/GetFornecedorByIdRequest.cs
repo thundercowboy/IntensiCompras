@@ -2,5 +2,5 @@
 
 public class GetFornecedorByIdRequest : Request
 {
-    public int Id { get; set; }
+    public long Id { get; set; }
 }

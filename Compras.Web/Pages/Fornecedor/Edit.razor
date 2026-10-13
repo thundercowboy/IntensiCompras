@@ -1,0 +1,33 @@
+﻿@page "/fornecedores/editar{id}"
+@inherits EditFornecedorPage
+
+<MudText Typo="Typo.h3">Editar Fornecedor</MudText>
+
+@if (IsBusy)
+{
+    <MudPaper Class="pa-8 mt-4">
+        <MudSkeleton Height="55px"></MudSkeleton>
+        <MudSkeleton Height="110px"></MudSkeleton>
+        <MudSkeleton Height="55px"></MudSkeleton>
+        <MudSkeleton Height="110px"></MudSkeleton>
+    </MudPaper>
+}
+else
+{
+    <MudPaper Class="pa-8 mt-4">
+        <EditForm Model="InputModel" OnSubmit="OnValidSubmitAsync">
+            <DataAnnotationsValidator/>
+            
+            <MudTextField Label="Nome"
+                          HelperText="Campo Obrigatório"
+                          bind-Value="InputModel.Nome"
+                          For=@(() => InputModel.Nome)></MudTextField>
+            
+            <MudButton ButtonType="ButtonType.Submit"
+                       Variant="Variant.Filled"
+                       Color="Color.Primary">
+                Salvar
+            </MudButton>
+        </EditForm>
+    </MudPaper>
+}
