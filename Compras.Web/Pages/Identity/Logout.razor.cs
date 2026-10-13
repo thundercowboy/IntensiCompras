@@ -1,4 +1,4 @@
-﻿using Compras.Core.Handlers;
+using Compras.Core.Handlers;
 using Compras.Web.Security;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
@@ -7,28 +7,25 @@ namespace Compras.Web.Pages.Identity;
 
 public partial class LogoutPage : ComponentBase
 {
-    #region Services
-
     [Inject] public ISnackbar Snackbar { get; set; } = null!;
     [Inject] public IAccountHandler Handler { get; set; } = null!;
     [Inject] public NavigationManager NavigationManager { get; set; } = null!;
-    [Inject] public ICookieAuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;    
+    [Inject] public ICookieAuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;
 
-    #endregion
-    
-    #region Overrides
+    public string? ErrorMessage { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        if (await AuthenticationStateProvider.CheckAuthenticatedAsync())
+        try
         {
             await Handler.LogoutAsync();
-            await AuthenticationStateProvider.GetAuthenticationStateAsync();
             AuthenticationStateProvider.NotifyAuthenticationStateChanged();
+            NavigationManager.NavigateTo("/login", replace: true);
         }
-        
-        await base.OnInitializedAsync();
+        catch (Exception)
+        {
+            ErrorMessage = "Não foi possível encerrar a sessão. Tente novamente.";
+            Snackbar.Add(ErrorMessage, Severity.Error);
+        }
     }
-
-    #endregion
 }

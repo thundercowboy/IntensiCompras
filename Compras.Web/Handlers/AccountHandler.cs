@@ -1,4 +1,4 @@
-﻿using System.Net.Http.Json;
+using System.Net.Http.Json;
 using System.Text;
 using Compras.Core.Handlers;
 using Compras.Core.Requests.Account;
@@ -26,9 +26,11 @@ public class AccountHandler(IHttpClientFactory httpClientFactory) : IAccountHand
             : new Response<string>(null, 500, "Não foi possivel realizar o cadastro");
     }
 
-    public Task LogoutAsync()
+    public async Task LogoutAsync()
     {
-        var emptyContent = new StringContent("{}", Encoding.UTF8, "/application/json");
-        return _client.PostAsync("v1/identity/logout", emptyContent);
+        using var emptyContent = new StringContent("{}", Encoding.UTF8, "application/json");
+        using var response = await _client.PostAsync("v1/identity/logout", emptyContent);
+        if (response.StatusCode != System.Net.HttpStatusCode.Unauthorized)
+            response.EnsureSuccessStatusCode();
     }
 }

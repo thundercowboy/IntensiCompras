@@ -1,4 +1,4 @@
-﻿@page "/fornecedores/editar{id}"
+@page "/fornecedores/editar/{id}"
 @inherits EditFornecedorPage
 
 <MudText Typo="Typo.h3">Editar Fornecedor</MudText>
@@ -20,7 +20,7 @@ else
             
             <MudTextField Label="Nome"
                           HelperText="Campo Obrigatório"
-                          bind-Value="InputModel.Nome"
+                          @bind-Value="InputModel.Nome"
                           For=@(() => InputModel.Nome)></MudTextField>
             
             <MudButton ButtonType="ButtonType.Submit"

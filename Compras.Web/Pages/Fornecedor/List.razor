@@ -1,4 +1,4 @@
-﻿@page "/fornecedores"
+@page "/fornecedores"
 @inherits ListFornecedorPage
 
 <MudText Typo="Typo.h3">Fornecedores</MudText>
@@ -36,7 +36,7 @@
                 <MudStack Row>
                     <MudIconButton
                         Icon="@Icons.Material.Filled.Edit"
-                        Href="@($"/materiais/editar/{context.Item.Id}")"
+                        Href="@($"/fornecedores/editar/{context.Item.Id}")"
                         Color="Color.Primary">
                     </MudIconButton>
                     <MudIconButton

@@ -1,4 +1,4 @@
-﻿using Compras.Core.Handlers;
+using Compras.Core.Handlers;
 using Compras.Core.Requests.Account;
 using Compras.Web.Security;
 using Microsoft.AspNetCore.Components;
@@ -50,7 +50,6 @@ public partial class LoginPage : ComponentBase
 
             if (result.IsSuccess)
             {
-                await AuthenticationStateProvider.GetAuthenticationStateAsync();
                 AuthenticationStateProvider.NotifyAuthenticationStateChanged();
                 NavigationManager.NavigateTo("/");
             }

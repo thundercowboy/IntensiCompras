@@ -1,4 +1,4 @@
-﻿@page "/material/adicionar"
+@page "/materiais/adicionar"
 @inherits CreateMaterialPage
 
 <MudText Typo="Typo.h3">Novo Material</MudText>
@@ -8,12 +8,12 @@
         
         <MudTextField Label="Codigo do Material"
                       HelperText="Campo obrigatório"
-                      bind-Value="InputModel.CodigoMaterial"
+                      @bind-Value="InputModel.CodigoMaterial"
                       For="@(() => InputModel.CodigoMaterial)"></MudTextField>
         
         <MudTextField Label="Nome"
                       HelperText="Campo obrigatório"
-                      bind-Value="InputModel.Nome"
+                      @bind-Value="InputModel.Nome"
                       For="@(() => InputModel.Nome)"></MudTextField>
         
         <MudButton ButtonType="ButtonType.Submit"

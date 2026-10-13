@@ -1,20 +1,15 @@
-﻿@page "/sair"
+@page "/sair"
 @inherits LogoutPage
 @layout HeadlessLayout
 
 <PageTitle>IntensiCompras - Sair</PageTitle>
 
-<MudText Typo="Typo.h3">Finalizando Sessão...</MudText>
-<MudPaper Class="pa-8 mt-4">
-    <div class="d-flex justify-center pb-8 pt-8">
-        <img src="icon-192.png" alt="IntensiCompras" width="200"/>
-    </div>
-    <MudAlert Severity="Severity.Info">
-        <div>
-            Sessão Finalizada...
-            <MudButton Variant="Variant.Text" Href="/">
-                IR PARA TELA DE LOGIN
-            </MudButton>
-        </div>
-    </MudAlert>
-</MudPaper>
+@if (ErrorMessage is not null)
+{
+    <MudAlert Severity="Severity.Error">@ErrorMessage</MudAlert>
+    <MudButton OnClick="@(() => NavigationManager.NavigateTo("/sair", forceLoad: true))">TENTAR NOVAMENTE</MudButton>
+}
+else
+{
+    <MudText Typo="Typo.h3">Finalizando sessão...</MudText>
+}
