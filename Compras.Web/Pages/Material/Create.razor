@@ -1,0 +1,26 @@
+﻿@page "/material/adicionar"
+@inherits CreateMaterialPage
+
+<MudText Typo="Typo.h3">Novo Material</MudText>
+<MudPaper class="pa-8 mt-4">
+    <EditForm Model="@InputModel" OnValidSubmit="OnValidSubmitAsync">
+        <DataAnnotationsValidator/>
+        
+        <MudTextField Label="Codigo do Material"
+                      HelperText="Campo obrigatório"
+                      bind-Value="InputModel.CodigoMaterial"
+                      For="@(() => InputModel.CodigoMaterial)"></MudTextField>
+        
+        <MudTextField Label="Nome"
+                      HelperText="Campo obrigatório"
+                      bind-Value="InputModel.Nome"
+                      For="@(() => InputModel.Nome)"></MudTextField>
+        
+        <MudButton ButtonType="ButtonType.Submit"
+                   Variant="Variant.Filled"
+                   Color="Color.Primary">
+            Salvar
+        </MudButton>
+    </EditForm>
+    
+</MudPaper>
