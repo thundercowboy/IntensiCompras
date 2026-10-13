@@ -11,7 +11,7 @@ public partial class ListMaterialPage : ComponentBase
 
     public bool IsBusy { get; set; }
     
-    public List<Core.Models.Material> Materiais { get; set; }
+    public List<Core.Models.Material> Materiais { get; set; } = [];
     
     public string SearchTerm { get; set; } = string.Empty;
 

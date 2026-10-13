@@ -1,0 +1,26 @@
+﻿@page "/unidades/adicionar"
+@inherits CreateUnidadesMedidaPage
+
+<MudText Typo="Typo.h3">Nova Unidade</MudText>
+<MudPaper class="pa-8 mt-4">
+    <EditForm Model="@InputModel" OnValidSubmit="OnValidSubmitAsync">
+        <DataAnnotationsValidator/>
+        
+        <MudTextField Label="Sigla da Unidade"
+                      HelperText="Campo obrigatório"
+                      bind-Value="InputModel.Sigla"
+                      For="@(() => InputModel.Sigla)"></MudTextField>
+        
+        <MudTextField Label="Nome da Unidade"
+                      HelperText="Campo obrigatório"
+                      bind-Value="InputModel.Nome"
+                      For="@(() => InputModel.Nome)"></MudTextField>
+        
+        <MudButton ButtonType="ButtonType.Submit"
+                   Variant="Variant.Filled"
+                   Color="Color.Primary">
+            Salvar
+        </MudButton>
+    </EditForm>
+    
+</MudPaper>
