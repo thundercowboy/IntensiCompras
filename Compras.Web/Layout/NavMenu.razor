@@ -1,31 +1,17 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Compras.Web</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
+﻿<div class="d-flex justify-content pb-8 pt-8">
+    <img src="icon-192.png" alt="IntensiCompras" width="192"/>
 </div>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+<MudNavMenu>
+    <MudNavLink Href="/" Match="NavLinkMatch.All">Inicio</MudNavLink>
+    <MudNavLink Href="/solicitacoes">Solicitações</MudNavLink>
+    <MudNavLink Href="/aprovacoes">Aprovações</MudNavLink>
+    <MudNavLink Href="/categorias">Categorias</MudNavLink>
+    <MudNavLink Href="/fornecedores">Fornecedores</MudNavLink>
+    <MudNavLink Href="/materiais">Materiais</MudNavLink>
+    <MudNavLink Href="/unidades">Unidades</MudNavLink>
+    <MudNavLink Href="/sair">Sair</MudNavLink>
+</MudNavMenu>
 
 @code {
     private bool collapseNavMenu = true;

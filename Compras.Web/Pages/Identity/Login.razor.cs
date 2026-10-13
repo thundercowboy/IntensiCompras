@@ -13,7 +13,7 @@ public partial class LoginPage : ComponentBase
     [Inject] public ISnackbar Snackbar { get; set; } = null!;
     [Inject] public IAccountHandler Handler { get; set; } = null!;
     [Inject] public NavigationManager NavigationManager { get; set; } = null!;
-    [Inject] public ICookieAuthenticationStateProvider AuthenticationStateProvider { get; set; } = null;
+    [Inject] public ICookieAuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;
 
     #endregion
 

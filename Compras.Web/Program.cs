@@ -17,9 +17,17 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped<CookieHandler>();
 
 builder.Services.AddAuthorizationCore();
+builder.Services.AddCascadingAuthenticationState();
 
-builder.Services.AddScoped<ICookieAuthenticationStateProvider, CookieAuthenticationStateProvider>();
+builder.Services.AddScoped<AuthenticationStateProvider, CookieAuthenticationStateProvider>();
 builder.Services.AddTransient<IAccountHandler, AccountHandler>();
+builder.Services.AddTransient<IAprovacaoHandler, AprovacaoHandler>();
+builder.Services.AddTransient<ICategoriaItemHandler, CategoriaItemHandler>();
+builder.Services.AddTransient<IFornecedorHandler, FornecedorHandler>();
+builder.Services.AddTransient<IItemHandler, ItemHandler>();
+builder.Services.AddTransient<IMaterialHandler, MaterialHandler>();
+builder.Services.AddTransient<ISolicitacaoHandler, SolicitacaoHandler>();
+builder.Services.AddTransient<IUnidadeMedidaHandler, UnidadeMedidaHandler>();
 
 builder.Services.AddScoped(x =>
     (ICookieAuthenticationStateProvider)x.GetRequiredService<AuthenticationStateProvider>());
